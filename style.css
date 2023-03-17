@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Montserrat:wght@500;700&display=swap');
+
+:root {
+  /* colors */
+
+  /* primary */
+  --deep-dark-cyan: hsl(158, 36%, 25%);
+  --dark-cyan: hsl(158, 36%, 37%);
+  --cream: hsl(30, 38%, 92%);
+
+  /* neutral */
+  --deep-dark-blue: hsl(212, 21%, 14%);
+  --dark-grayish-blue: hsl(228, 12%, 48%);
+  --white: hsl(0, 0%, 100%);
+
+  /* typography */
+  --fz-sm: 12px;
+  --fz-base: 14px;
+  --fz-lg: 28px;
+
+  --ff-fraunces: 'Fraunces', serif;
+  --ff-montserrat: 'Montserrat', sans-serif;
+}
+
+/* reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  min-height: 100vh;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--cream);
+}
+
+.card {
+  display: grid;
+  background-color: var(--white);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 0.6px 2.2px rgba(0, 0, 0, 0.014),
+    0px 1.3px 5.3px rgba(0, 0, 0, 0.02), 0px 2.5px 10px rgba(0, 0, 0, 0.025),
+    0px 4.5px 17.9px rgba(0, 0, 0, 0.03), 0px 8.4px 33.4px rgba(0, 0, 0, 0.036),
+    0px 20px 80px rgba(0, 0, 0, 0.05);
+}
+
+.card .product-img img {
+  width: 100%;
+  vertical-align: middle;
+}
+
+.body {
+  padding: 1.5rem;
+}
+
+.body .category {
+  color: var(--dark-grayish-blue);
+  font-size: var(--fz-sm);
+  font-weight: 500;
+  font-family: var(--ff-montserrat);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+.body .title {
+  margin-block: 1rem;
+  color: var(--deep-dark-blue);
+  font-size: var(--fz-lg);
+  font-weight: 700;
+  font-family: var(--ff-fraunces);
+  line-height: 1;
+}
+
+.body .content {
+  color: var(--dark-grayish-blue);
+  font-size: var(--fz-base);
+  font-weight: 500;
+  font-family: var(--ff-montserrat);
+  line-height: 1.6;
+}
+
+.price {
+  margin-block: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.price .discount {
+  color: var(--dark-cyan);
+  font-size: var(--fz-lg);
+  font-family: var(--ff-fraunces);
+}
+
+.price .original {
+  color: var(--dark-grayish-blue);
+  font-size: var(--fz-base);
+  font-family: var(--ff-montserrat);
+  text-decoration: line-through;
+}
+
+.body .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 8px;
+  color: var(--white);
+  font-size: var(--fz-base);
+  font-weight: 500;
+  font-family: var(--ff-montserrat);
+  background-color: var(--dark-cyan);
+  transition: background-color 300ms ease-in;
+  cursor: pointer;
+}
+
+.body .btn:hover {
+  background-color: var(--deep-dark-cyan);
+}
+
+.attribution {
+  position: fixed;
+  bottom: 0.5rem;
+  left: 0;
+  right: 0;
+  font-size: 11px;
+  text-align: center;
+  font-family: var(--ff-montserrat);
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media screen and (min-width: 576px) {
+  .card {
+    max-width: 576px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+}
